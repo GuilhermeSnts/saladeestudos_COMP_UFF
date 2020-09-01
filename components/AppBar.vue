@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar fixed app>
+  <v-app-bar fixed app color="purple darken-4" dark>
     <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
     <v-avatar tile >
       <img src="../static/logo.png" style="width: 30px; height: 30px" alt="sala de estudos logo">
