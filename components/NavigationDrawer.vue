@@ -56,51 +56,13 @@
 
 <script>
 import { mapMutations, mapGetters } from 'vuex'
-
+import items from '../static/json/sidebar.json'
 export default {
   name: 'NavigationDrawer',
   data() {
     return {
       search: '',
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Dashboard',
-          to: '/',
-          type: 'link',
-        },
-        {
-          icon: 'mdi-book',
-          title: 'Disciplinas',
-          type: 'list',
-          items: [
-            {
-              icon: 'mdi-chart-bell-curve',
-              title: 'Álgebra Linear',
-              type: 'link',
-              to: '/disciplinas/algebra_linear',
-            },
-            {
-              icon: 'mdi-text-box-search-outline',
-              title: 'Análise de sistemas',
-              type: 'link',
-              to: '/disciplinas/analise_de_sistemas',
-            },
-            {
-              icon: 'mdi-select-search',
-              title: 'Arquitetura e Projeto de Sistemas',
-              type: 'link',
-              to: '/disciplinas/arquitetura_e_projeto_de_sistemas',
-            },
-            {
-              icon: 'mdi-database',
-              title: 'Banco de Dados',
-              type: 'link',
-              to: '/disciplinas/banco_de_dados',
-            },
-          ],
-        },
-      ],
+      items,
     }
   },
 
