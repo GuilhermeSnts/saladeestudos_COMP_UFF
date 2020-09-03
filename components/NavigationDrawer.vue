@@ -63,6 +63,9 @@
         <v-btn icon @click="goToGithub()">
           <v-icon>mdi-github</v-icon>
         </v-btn>
+        <v-btn icon @click="invertTheme()">
+          <v-icon>mdi-white-balance-sunny</v-icon>
+        </v-btn>
       </v-row>
     </template>
   </v-navigation-drawer>
@@ -83,8 +86,13 @@ export default {
   methods: {
     ...mapMutations('settings', ['SET_DRAWER']),
 
-    goToGithub(){
-      window.open("https://github.com/compcederj", "_blank")
+    goToGithub() {
+      window.open('https://github.com/compcederj', '_blank')
+    },
+
+    invertTheme() {
+      localStorage.setItem('darkTheme', !this.$vuetify.theme.dark)
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
     },
 
     matchMenu(string, menu) {

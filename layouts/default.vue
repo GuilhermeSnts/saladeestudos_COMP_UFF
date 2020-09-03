@@ -26,5 +26,9 @@ export default {
     AppFooter,
     NavigationDrawer,
   },
+
+  mounted() {
+    this.$vuetify.theme.dark = localStorage.getItem('darkTheme')
+  },
 }
 </script>
