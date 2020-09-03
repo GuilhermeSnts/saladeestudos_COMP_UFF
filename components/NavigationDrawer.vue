@@ -1,14 +1,18 @@
 <template>
   <v-navigation-drawer v-model="drawer" app>
-    <v-text-field
-      label="Pesquisar nesse menu"
-      v-model="search"
-      hide-details
-      solo
-      class="ma-2"
-      rounded
-      prepend-inner-icon="mdi-magnify"
-    ></v-text-field>
+    <template v-slot:prepend>
+      <v-text-field
+        label="Pesquisar nesse menu"
+        v-model="search"
+        hide-details
+        dense
+        filled
+        class="ma-2"
+        rounded
+        prepend-inner-icon="mdi-magnify"
+      ></v-text-field>
+    </template>
+
     <v-list>
       <div v-for="(item, i) in filteredMenu" :key="i">
         <!-- if it is a link -->
@@ -51,6 +55,16 @@
         </v-list-group>
       </div>
     </v-list>
+
+    <template v-slot:append>
+      <v-divider></v-divider>
+      <v-row class="ma-2">
+        <v-spacer />
+        <v-btn icon @click="goToGithub()">
+          <v-icon>mdi-github</v-icon>
+        </v-btn>
+      </v-row>
+    </template>
   </v-navigation-drawer>
 </template>
 
@@ -68,6 +82,10 @@ export default {
 
   methods: {
     ...mapMutations('settings', ['SET_DRAWER']),
+
+    goToGithub(){
+      window.open("https://github.com/compcederj", "_blank")
+    },
 
     matchMenu(string, menu) {
       let p = Array.from(string.toLowerCase()).reduce(

@@ -6,9 +6,6 @@
     </v-avatar>
     <v-toolbar-title class="ml-4" v-text="title" />
     <v-spacer />
-    <v-btn icon @click.stop="goToGithub()">
-      <v-icon>mdi-github</v-icon>
-    </v-btn>
   </v-app-bar>
 </template>
 
