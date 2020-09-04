@@ -13,7 +13,7 @@
       ></v-text-field>
     </template>
 
-    <v-list>
+    <v-list nav dense>
       <div v-for="(item, i) in filteredMenu" :key="i">
         <!-- if it is a link -->
 
