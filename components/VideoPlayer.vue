@@ -63,7 +63,7 @@
 
       <v-row>
         <v-toolbar dense flat>
-          <v-btn dark icon @click="playOrPause()" :loading="isLoading">
+          <v-btn icon @click="playOrPause()" :loading="isLoading">
             <v-icon v-text="!isPlaying ? 'mdi-play' : 'mdi-pause'" />
           </v-btn>
 
