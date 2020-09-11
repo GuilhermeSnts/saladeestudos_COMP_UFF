@@ -108,7 +108,7 @@
           </v-menu>
 
           <v-btn icon @click="fullscreen()">
-            <v-icon> mdi-fullscreen </v-icon>
+            <v-icon v-text="'mdi-fullscreen '" />
           </v-btn>
         </v-toolbar>
       </v-row>
@@ -181,7 +181,11 @@ export default {
       this.isPlaying = false
     },
     fullscreen() {
-      this.$refs.player.requestFullscreen()
+      if (!document.fullscreenElement) {
+        this.$refs.player.requestFullscreen()
+      } else {
+        document.exitFullscreen()
+      }
     },
     setProgress(v) {
       console.log(v)
@@ -254,4 +258,10 @@ export default {
   .progressbar_progress
     width: calc(100% - 16px)
     margin-left: 8px
+
+@media all and (display-mode: fullscreen)
+  .video-wrapper
+    .video
+      width: 100%
+      max-height: calc(100vh - 144px) !important
 </style>
