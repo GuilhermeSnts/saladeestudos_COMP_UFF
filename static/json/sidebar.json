@@ -29,6 +29,12 @@
         "to": "/disciplinas/aps"
       },
       {
+        "icon": "mdi-database",
+        "title": "Banco de dados",
+        "type": "link",
+        "to": "/disciplinas/bd"
+      },
+      {
         "icon": "mdi-auto-fix",
         "title": "Computação Gráfica",
         "type": "link",
