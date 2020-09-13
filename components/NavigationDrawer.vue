@@ -38,7 +38,7 @@
           </template>
 
           <v-list-item
-            :to="subItem.to"
+            :to="subItem.path"
             nav
             router
             exact
@@ -72,19 +72,18 @@
 </template>
 
 <script>
-import { mapMutations, mapGetters } from 'vuex'
-import items from '../static/json/sidebar.json'
+import { mapMutations, mapGetters, mapActions } from 'vuex'
 export default {
   name: 'NavigationDrawer',
   data() {
     return {
       search: '',
-      items,
     }
   },
 
   methods: {
     ...mapMutations('settings', ['SET_DRAWER']),
+    ...mapActions('subjects', ['GET_SUBJECTS']),
 
     goToGithub() {
       window.open('https://github.com/compcederj', '_blank')
@@ -107,6 +106,7 @@ export default {
 
   computed: {
     ...mapGetters('settings', ['DRAWER']),
+    ...mapGetters('subjects', ['LINKS']),
 
     drawer: {
       get: function () {
@@ -115,6 +115,22 @@ export default {
       set: function (val) {
         this.SET_DRAWER(val)
       },
+    },
+    items() {
+      return [
+        {
+          icon: 'mdi-apps',
+          title: 'Dashboard',
+          to: '/',
+          type: 'link',
+        },
+        {
+          icon: 'mdi-book',
+          title: 'Disciplinas',
+          type: 'list',
+          items: this.LINKS,
+        },
+      ]
     },
 
     filteredMenu() {
@@ -131,6 +147,9 @@ export default {
         return this.items
       }
     },
+  },
+  mounted() {
+    this.GET_SUBJECTS()
   },
 }
 </script>
