@@ -2,14 +2,10 @@
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6>
       <div class="text-center"></div>
-      <v-card>
+      <v-card outlined>
         <v-card-text>
           <nuxt-content :document="page" />
         </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn color="primary" nuxt to="/inspire"> Continuar </v-btn>
-        </v-card-actions>
       </v-card>
     </v-flex>
   </v-layout>

@@ -31,7 +31,10 @@ export const getters = {
 export const actions = {
   async GET_SUBJECTS(context) {
     let data = await axios(this.$config.baseUrl + '/api/v1/subjects').then(
-      (res) => res.data
+      (res) => {
+        if (typeof res.data == 'Array') return res.data
+        else return []
+      }
     )
     context.commit('SET_SUBJECTS', data)
   },
