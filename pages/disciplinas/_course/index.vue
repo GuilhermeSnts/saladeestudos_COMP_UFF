@@ -55,7 +55,7 @@ export default {
       )
     },
     goToDrive() {
-      // precisa obter o conteúdo de algum lugar
+      window.open(this.courseData.drive_link, '_blank')
     },
   },
 }
