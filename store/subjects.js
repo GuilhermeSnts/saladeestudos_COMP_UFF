@@ -32,7 +32,8 @@ export const actions = {
   async GET_SUBJECTS(context) {
     let data = await axios(this.$config.baseUrl + '/api/v1/subjects').then(
       (res) => {
-        if (typeof res.data == 'Array') return res.data
+        console.log(typeof res.data)
+        if (typeof res.data == 'object') return res.data
         else return []
       }
     )
