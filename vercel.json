@@ -1,5 +1,0 @@
-{
-  "redirects": [
-    { "source": "/api/:match*", "destination": "https://saladeestudos.link/:match*" }
-  ]
-}
