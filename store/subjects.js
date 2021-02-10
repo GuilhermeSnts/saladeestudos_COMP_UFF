@@ -30,7 +30,7 @@ export const getters = {
 
 export const actions = {
   async GET_SUBJECTS(context) {
-    let data = await axios(this.$config.baseUrl + '/api/v1/subjects').then(
+    let data = await axios('/api/v1/subjects').then(
       (res) => {
         console.log(typeof res.data)
         if (typeof res.data == 'object') return res.data
