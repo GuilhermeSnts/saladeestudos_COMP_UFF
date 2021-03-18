@@ -1,8 +1,8 @@
 # saladeestudos
 
-Este projeto está em fase inicial de desenvolvimento, qualquer ajuda é bem vinda.
+Este projeto está Arquivado pois migrou para o repositório:
+https://github.com/GuilhermeSnts/sala-de-estudos-cederj
 
-Você pode acessar a demo do projeto [Clicando aqui](https://saladeestudos.vercel.app)
 
 ## Tecnologias no App
 
